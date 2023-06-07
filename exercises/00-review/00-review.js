@@ -1,3 +1,5 @@
+import { greet } from "./greet.js"; // I am importing the 'greet' function from the 'greet.js' file
+
 /**
  * Solve this problem using ES modules (ESM).
  * ES modules allow you break up your code into multiple files (or modules), and then share code between different files.
@@ -33,6 +35,7 @@ const greet = (name) => {
 
 const highestNumber = (array) => {
   // Write your answer here
+  return array.reduce((a, b) => Math.max(a, b), -Infinity); // the highestNumber function utilizes the reduce method and the Math.max function to find the maximum value within an array of numbers
 };
 
 /**
@@ -46,6 +49,7 @@ const highestNumber = (array) => {
 
 const combineArray = (array1, array2) => {
   // Write your answer here
+  return [...array1, ...array2]; //the combineArray function takes two arrays as input and returns a new array that contains all the elements from both input arrays combined
 };
 
 /**
@@ -55,8 +59,11 @@ const combineArray = (array1, array2) => {
  * @return {object} obj1 and obj2 combined
  */
 
+const obj1 = { name: "Edwin", age: 29 };
+const obj2 = { occupation: "Developer", city: "New York" };
 const combineObject = (obj1, obj2) => {
   // Write your answer here
+  return { ...obj1, ...obj2 }; // the combineObject function takes two objects as input and returns a new object that contains all the properties from both input objects combined.
 };
 
 /**
@@ -68,6 +75,7 @@ const combineObject = (obj1, obj2) => {
 
 const doubleValues = (arr) => {
   // Write your answer here
+  return arr.map((value) => value * 2); //  the doubleValues function takes an array as input and returns a new array where each element is doubled by multiplying it by 2 using the map method.
 };
 
 /**
@@ -81,6 +89,7 @@ const doubleValues = (arr) => {
  */
 const onlyEvenValues = (arr) => {
   // Write your answer here
+  return arr.filter((value) => value % 2 === 0); // onlyEvenValues function takes an array as input and returns a new array that contains only the even values from the original array using the filter method.
 };
 
 /**
@@ -103,11 +112,22 @@ const onlyEvenValues = (arr) => {
  */
 const removeVowels = (str) => {
   // Write your answer here
+  const vowels = ["a", "e", "i", "o", "u"];
+  let lowercaseStr = str.toLowerCase();
+  let result = "";
+
+  for (let i = 0; i < lowercaseStr.length; i++) {
+    if (!vowels.includes(lowercaseStr[i])) {
+      result += lowercaseStr[i];
+    }
+  }
+  return result;
 };
 
 /**
  * Solve this problem using the ternary operator.
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+ * Solve this problem using the ternary operator.
  * @returns {string}
  */
 
@@ -116,15 +136,16 @@ const getIsHungryText = () => {
   let isStomachEmpty = false;
   /* convert this if else statement into a ternary expression */
 
-  // let isHungry;
-  // if (isStomachEmpty) {
-  //   isHungry = "Go eat something.";
-  // } else {
-  //   isHungry = "Keep coding!";
-  // }
-
+  let isHungry = isStomachEmpty ? "Go eat something." : "Keep coding!"; // A shorter Ternary way of solving the problem instead of using the if else statement
   return isHungry;
 };
+
+// let isHungry;
+// if (isStomachEmpty) {
+//   isHungry = "Go eat something.";
+// } else {
+//   isHungry = "Keep coding!";
+// }
 
 /**
  * Refactor this to use destructuring. For an example of destructuring,
@@ -142,6 +163,16 @@ const getTempOfTomorrow = () => {
   // Start of what you should change
   const today = AVG_TEMPERATURES.today;
   const tomorrow = AVG_TEMPERATURES.tomorrow;
+
+  const getTempOfTomorrow = () => {
+    const AVG_TEMPERATURES = {
+      today: 77.5,
+      tomorrow: 79,
+    };
+
+    const { today, tomorrow } = AVG_TEMPERATURES;
+    return `Today's temperature is ${today}.\nTomorrow's temperature is ${tomorrow}`;
+  };
   // End of what you should change
   return `Today's temperature is ${today}.\nTomorrow's temperature is ${tomorrow}`;
 };
@@ -159,6 +190,7 @@ const getTempOfTomorrow = () => {
  */
 const addItems = (arr) => {
   // Write your answer here
+  return arr.reduce((accumulate, currentVal) => accumulate + currentVal); //, the addItems function takes an array of numbers as input and returns the sum of all the numbers using the reduce method.
 };
 
 /**
@@ -174,7 +206,9 @@ const addItems = (arr) => {
 
 const removeDuplicates = (array) => {
   // Write your answer here
+
   // Return an array of unique values
+  return [...new Set(array)]; //Set object and then spreading its unique values into a new array using the spread operator.
 };
 
 /**
