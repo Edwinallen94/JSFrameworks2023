@@ -11,6 +11,11 @@ const Person = () => {
    * @example new Date(Date.now()).getFullYear()
    */
 
+  const getAge = (birthYear) => {
+    const thisYear = new Date(Date.now()).getFullYear();
+    return thisYear - birthYear;
+  };
+
   return (
     <div>
       <h1>Featured Person</h1>
