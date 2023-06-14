@@ -2,6 +2,11 @@
  * Write your CSS here
  */
 img {
+<<<<<<< HEAD
   width: 200px;
   height: 200px;
+=======
+  width: 50%;
+  height: 50%;
+>>>>>>> 1102a559497e14c7cbd0096e6cec5a4f1808d6fb
 }

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { greet } from "./greet.js"; // I am importing the 'greet' function from the 'greet.js' file
+=======
+import greet from './greet.js';
+>>>>>>> 1102a559497e14c7cbd0096e6cec5a4f1808d6fb
 
 /**
  * Solve this problem using ES modules (ESM).
@@ -9,9 +13,7 @@ import { greet } from "./greet.js"; // I am importing the 'greet' function from 
  * 1. Create a new file in the same folder as this file called "greet.js". (NOTE that you will need to include the extension ".js" in order for this to work)
  * 2. Copy the "greet" function below and paste it into the new file "greet.js"
 
-const greet = (name) => {
-  return `Hello ${name}!`;
-};
+
 
  * 3. Export the "greet" function from "greet.js"
  * 4. Import the function at the top of this file using the name "greet"
@@ -28,6 +30,7 @@ const greet = (name) => {
  * @param  { array }
  * @returns { number } the highest number that was in the array
  * @example
+ *
  * highestNumber([1, 10, 2, 3, 4]) // 10
  * highestNumber([-1, -5, -4]) // -1
  *
@@ -35,7 +38,11 @@ const greet = (name) => {
 
 const highestNumber = (array) => {
   // Write your answer here
+<<<<<<< HEAD
   return array.reduce((a, b) => Math.max(a, b), -Infinity); // the highestNumber function utilizes the reduce method and the Math.max function to find the maximum value within an array of numbers
+=======
+  return array.reduce((a, b) => Math.max(a, b), -Infinity);
+>>>>>>> 1102a559497e14c7cbd0096e6cec5a4f1808d6fb
 };
 
 /**
@@ -49,7 +56,12 @@ const highestNumber = (array) => {
 
 const combineArray = (array1, array2) => {
   // Write your answer here
+<<<<<<< HEAD
   return [...array1, ...array2]; //the combineArray function takes two arrays as input and returns a new array that contains all the elements from both input arrays combined
+=======
+  const array = [...array1, ...array2];
+  return array;
+>>>>>>> 1102a559497e14c7cbd0096e6cec5a4f1808d6fb
 };
 
 /**
@@ -63,7 +75,12 @@ const obj1 = { name: "Edwin", age: 29 };
 const obj2 = { occupation: "Developer", city: "New York" };
 const combineObject = (obj1, obj2) => {
   // Write your answer here
+<<<<<<< HEAD
   return { ...obj1, ...obj2 }; // the combineObject function takes two objects as input and returns a new object that contains all the properties from both input objects combined.
+=======
+  let combo = { ...obj1, ...obj2 };
+  return combo;
+>>>>>>> 1102a559497e14c7cbd0096e6cec5a4f1808d6fb
 };
 
 /**
@@ -75,7 +92,12 @@ const combineObject = (obj1, obj2) => {
 
 const doubleValues = (arr) => {
   // Write your answer here
+<<<<<<< HEAD
   return arr.map((value) => value * 2); //  the doubleValues function takes an array as input and returns a new array where each element is doubled by multiplying it by 2 using the map method.
+=======
+  let doubles = arr.map((num) => num * 2); // each num gets multiplied by 2
+  return doubles;
+>>>>>>> 1102a559497e14c7cbd0096e6cec5a4f1808d6fb
 };
 
 /**
@@ -89,7 +111,11 @@ const doubleValues = (arr) => {
  */
 const onlyEvenValues = (arr) => {
   // Write your answer here
+<<<<<<< HEAD
   return arr.filter((value) => value % 2 === 0); // onlyEvenValues function takes an array as input and returns a new array that contains only the even values from the original array using the filter method.
+=======
+  return arr.filter((num) => num % 2 === 0); //divisibility by 2 and remainder is 0 it is an even number
+>>>>>>> 1102a559497e14c7cbd0096e6cec5a4f1808d6fb
 };
 
 /**
@@ -112,6 +138,7 @@ const onlyEvenValues = (arr) => {
  */
 const removeVowels = (str) => {
   // Write your answer here
+<<<<<<< HEAD
   const vowels = ["a", "e", "i", "o", "u"];
   let lowercaseStr = str.toLowerCase();
   let result = "";
@@ -122,6 +149,19 @@ const removeVowels = (str) => {
     }
   }
   return result;
+=======
+  const vowels = ["a", "e", "i", "o", "u"]; // vowels so we know what we are looking for
+  let newStr = str.toLowerCase(); // makes any string lowercase and easier to filter thru
+  let leftOver = ""; // we store left over letters after taking out vowels
+  for (let i = 0; i < newStr.length; i++) {
+    // filters thru each letter in a string
+    if (!vowels.includes(newStr[i])) {
+      // if not a vowel it gets added to leftOver
+      leftOver += newStr[i];
+    }
+  }
+  return leftOver;
+>>>>>>> 1102a559497e14c7cbd0096e6cec5a4f1808d6fb
 };
 
 /**
@@ -136,7 +176,17 @@ const getIsHungryText = () => {
   let isStomachEmpty = false;
   /* convert this if else statement into a ternary expression */
 
+<<<<<<< HEAD
   let isHungry = isStomachEmpty ? "Go eat something." : "Keep coding!"; // A shorter Ternary way of solving the problem instead of using the if else statement
+=======
+  let isHungry = isStomachEmpty ? "Go eat something." : "Keep coding!";
+  // if (isStomachEmpty) {
+  //   isHungry = "Go eat something.";
+  // } else {
+  //   isHungry = "Keep coding!";
+  // }
+
+>>>>>>> 1102a559497e14c7cbd0096e6cec5a4f1808d6fb
   return isHungry;
 };
 
@@ -161,6 +211,7 @@ const getTempOfTomorrow = () => {
   };
 
   // Start of what you should change
+<<<<<<< HEAD
   const today = AVG_TEMPERATURES.today;
   const tomorrow = AVG_TEMPERATURES.tomorrow;
 
@@ -173,6 +224,9 @@ const getTempOfTomorrow = () => {
     const { today, tomorrow } = AVG_TEMPERATURES;
     return `Today's temperature is ${today}.\nTomorrow's temperature is ${tomorrow}`;
   };
+=======
+  const { today, tomorrow } = AVG_TEMPERATURES;
+>>>>>>> 1102a559497e14c7cbd0096e6cec5a4f1808d6fb
   // End of what you should change
   return `Today's temperature is ${today}.\nTomorrow's temperature is ${tomorrow}`;
 };
@@ -190,7 +244,11 @@ const getTempOfTomorrow = () => {
  */
 const addItems = (arr) => {
   // Write your answer here
+<<<<<<< HEAD
   return arr.reduce((accumulate, currentVal) => accumulate + currentVal); //, the addItems function takes an array of numbers as input and returns the sum of all the numbers using the reduce method.
+=======
+  return arr.reduce((accum, currentValue) => accum + currentValue);
+>>>>>>> 1102a559497e14c7cbd0096e6cec5a4f1808d6fb
 };
 
 /**
@@ -206,7 +264,12 @@ const addItems = (arr) => {
 
 const removeDuplicates = (array) => {
   // Write your answer here
+<<<<<<< HEAD
 
+=======
+  return [...new Set(array)];
+  //set is a data structure that creates a new set object which auto removes dup values
+>>>>>>> 1102a559497e14c7cbd0096e6cec5a4f1808d6fb
   // Return an array of unique values
   return [...new Set(array)]; //Set object and then spreading its unique values into a new array using the spread operator.
 };
@@ -223,15 +286,15 @@ try {
   // However, I am just using try ... catch to get the unit test to work
 }
 export {
-  greeter,
-  highestNumber,
+  addItems,
   combineArray,
   combineObject,
   doubleValues,
-  onlyEvenValues,
-  removeVowels,
   getIsHungryText,
   getTempOfTomorrow,
-  addItems,
+  greeter,
+  highestNumber,
+  onlyEvenValues,
   removeDuplicates,
+  removeVowels,
 };
