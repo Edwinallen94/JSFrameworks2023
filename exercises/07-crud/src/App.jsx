@@ -2,16 +2,31 @@ import { useState } from "react";
 import "./App.css";
 
 const GroceryList = () => {
+  const [item, setItem] = useState("");
+  const [cost, setCost] = useState("");
+
+  const [list, setList] = useState([]);
+
+  const handleSumbit = (e) => {
+    e.preventDefault();
+
+    const row = { item: item, cost: cost };
+    const newList = [...list, row];
+    setList(newList);
+  };
+
   return (
     <div className="container">
       <div className="card card-body bg-light mb-2">
-        <form method="POST" className="row g-3">
+        <form method="POST" className="row g-3" onSubmit={handleSumbit}>
           <div className="col">
             <input
               className="form-control"
               type="text"
               placeholder="Name of grocery item..."
               aria-label="Name of grocery item..."
+              value={item}
+              onChange={(e) => setItem(e.target.value)}
             />
           </div>
           <div className="col">
