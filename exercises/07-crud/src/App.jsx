@@ -2,23 +2,10 @@ import { useState } from "react";
 import "./App.css";
 
 const GroceryList = () => {
-  const [item, setItem] = useState("");
-  const [cost, setCost] = useState("");
-
-  const [list, setList] = useState([]);
-
-  const handleSumbit = (e) => {
-    e.preventDefault();
-
-    const row = { item: item, cost: cost };
-    const newList = [...list, row];
-    setList(newList);
-  };
-
   return (
     <div className="container">
       <div className="card card-body bg-light mb-2">
-        <form method="POST" className="row g-3" onSubmit={handleSumbit}>
+        <form method="POST" className="row g-3">
           <div className="col">
             <input
               className="form-control"
@@ -48,6 +35,9 @@ const GroceryList = () => {
       </div>
       <div className="card card-body border-white">
         <h1 className="h4">Grocery List</h1>
+        {actionItems.map((item, index) => {
+          const { items } = item;
+        })}
         <table className="table table-sm">
           <thead>
             <tr>
@@ -73,7 +63,7 @@ const GroceryList = () => {
           </tbody>
         </table>
         <p className="lead">
-          <strong>Total Cost: {/* Complete me */}</strong>
+          <strong>Total Cost: {/**hello */}</strong>
         </p>
         <div className="d-flex justify-content-end">
           <button type="button" className="btn btn-outline-success">

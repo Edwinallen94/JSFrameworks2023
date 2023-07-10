@@ -18,6 +18,10 @@ import states from "../../assets/states";
  * - a callback function(s) for setting first name, last name, etc.
  */
 function AddressForm(props) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.setDisplayResults(true);
+  };
   /**
    * You will need to:
    * - Set the value of each <input> / <select> to something from props
@@ -25,7 +29,7 @@ function AddressForm(props) {
    * - Add an event handler to handle form submission
    */
   return (
-    <form className="container mt-4">
+    <form className="container mt-4" onSubmit={handleSubmit}>
       <div className="mb-3">
         <label htmlFor="firstName" className="control-label">
           First Name
@@ -35,6 +39,8 @@ function AddressForm(props) {
           name="firstName"
           type="text"
           className="form-control"
+          value={props.firstName}
+          onChange={(e) => props.setFirstName(e.target.value)}
         />
       </div>
       <div className="mb-3">
