@@ -2,6 +2,7 @@
 import { useState } from "react";
 import "./App.css";
 import translations from "./assets/translations.json";
+import { useContext, createContext } from "react";
 
 /**
  * Declare createContext() here.
@@ -10,7 +11,7 @@ import translations from "./assets/translations.json";
 function App() {
   /**
    * Set state here. (See useState in "CreateAccount" below.)
-   */
+   */const ThemeContext =
 
   /**
    * You will need to return more than just <CreateAccount />.

@@ -2,6 +2,22 @@ import { useState } from "react";
 import "./App.css";
 
 const GroceryList = () => {
+const [setItem, ]
+const
+
+  const row = {item: item, cost: cost };
+  const newList = [...list, row];
+  setList(newList);
+
+  let totalCost = 0;
+  for (let i = 0; i < list.length; i++) {
+    item = list[i];
+    totalCost = totalCost + parseFloat {item.cost}
+  }
+  
+  console.log(Math.ceil(totalCost * 100) / 100);
+
+
   return (
     <div className="container">
       <div className="card card-body bg-light mb-2">

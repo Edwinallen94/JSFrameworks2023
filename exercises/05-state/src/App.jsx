@@ -6,6 +6,8 @@ import { LessText } from "./LessText/LessText";
 
 //Import GuessTheNumber
 
+import { GuessTheNumber } from "./components/GuessTheNumber";
+
 function App() {
   return (
     <>
