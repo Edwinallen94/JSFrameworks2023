@@ -19,7 +19,7 @@ function App() {
   const [quote, setQuote] = useState([]);
 
   useEffect(() => {
-    const apiUrl = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
+    const 
     axios
       .get(apiUrl)
       .then((data) => {
