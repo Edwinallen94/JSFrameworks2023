@@ -1,11 +1,22 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 // Import something here
+import useSWR from "swr";
+
+const fetcher = (...args) => axios(...args).then((res) => res.data.fact);
 
 function CatFact() {
+  const { data } = useSWR("https://catfact.ninja/fact", fetcher, {
+    suspense: true,
+    revalidateOnFocus: false,
+    revalidateOnMount: false,
+    revalidateOnReconnect: false,
+    refreshInterval: 0,
+  });
   /**
    * You will not need state store the fact in state anymore after refactoring App.jsx to use Suspense.
    */
+
   const [fact, setFact] = useState("");
 
   /**
@@ -21,17 +32,16 @@ function CatFact() {
    * Instead of setting the fact in state, you will want to return the fact.
    */
   useEffect(() => {
-    axios("https://catfact.ninja/fact")
-      .then((res) => {
-        setFact(res.data.fact);
-        setIsLoading(false);
-      })
-      // Will this catch block be needed anymore?
-      .catch((err) => {
-        console.error(err);
-        setHasError(true);
-        setIsLoading(false);
-      });
+    fetcher("https://catfact.ninja/fact").then((res) => {
+      setFact(res.data.fact);
+      setIsLoading(false);
+    });
+    // Will this catch block be needed anymore?
+    // .catch((err) => {
+    //   console.error(err);
+    //   setHasError(true);
+    //   setIsLoading(false);
+    // });
   }, []);
 
   /**
