@@ -1,10 +1,7 @@
-import {
-  render,
-  screen,
-} from '@testing-library/react';
+import { render, screen } from "@testing-library/react";
 
-import Heading from './components/Heading';
-import Welcome from './components/Welcome';
+import Heading from "./Heading/Heading";
+import Welcome from "./Welcome";
 
 describe("Welcome component", () => {
   test("If name is provided, the Welcome component should render Hello.", () => {
