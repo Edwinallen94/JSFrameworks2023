@@ -4,6 +4,7 @@
  */
 
 // import something here
+import { Link } from "react-router-dom";
 import { inventory } from "../../assets/inventory";
 
 function Home() {
