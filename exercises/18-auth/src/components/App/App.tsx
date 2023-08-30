@@ -1,6 +1,8 @@
 import { useState, ChangeEvent } from "react";
+import { Navigate } from "react-router-dom";
 // import something here
 // import Axios (or use Fetch)
+import axios from "axios";
 
 function App() {
   /**
@@ -17,6 +19,19 @@ function App() {
   /**
    * Complete all the logging in and logout logic
    */
+
+  const[token, setToken] = useState("");
+
+  const login = async (errorMessage: { preventDefault: () => void; }) => {
+    errorMessage.preventDefault();
+    try {
+      const response = await
+      axios("")
+    }
+  }
+    
+  
+
 
   /**
    * If the user is logged in, you should render the <Home /> component instead.

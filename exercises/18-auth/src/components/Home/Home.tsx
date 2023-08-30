@@ -1,6 +1,7 @@
 // You might need to import something from React
 import { useState } from "react";
 import { IMovie } from "../../types/movies";
+import axios from "axios";
 // import Axios (or use Fetch)
 
 type HomeProps = {
